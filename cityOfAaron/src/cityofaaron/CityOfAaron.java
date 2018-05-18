@@ -7,6 +7,7 @@
 package cityofaaron;
 
 import Model.Player;
+import Model.TeamMember;
 
 /**
  *
@@ -20,11 +21,22 @@ public class CityOfAaron {
     public static void main(String[] args) {
         Player player = new Player();
         
-        Player.setName("Fred Flintstone");
+        player.setName("Fred Flintstone");
         
-        String player = Player.getName();
+        String playername = player.getName();
         
-        System.out.println("Name = " + player);
+        System.out.println("Name = " + playername);
+        
+        TeamMember.Lance.getName();
+        TeamMember.Lance.getTitle();
+        TeamMember.Brian.getName();
+        TeamMember.Brian.getTitle();
+        TeamMember.Andrew.getName();
+        TeamMember.Andrew.getTitle();
+        
+       
+        
+        
         
         
     }

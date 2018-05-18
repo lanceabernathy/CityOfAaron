@@ -13,25 +13,23 @@ import java.awt.Point;
  */
 public enum TeamMember {
     
-    Lance("Lance", "A member of the team", new Point(1,1))
-    Brian("Brian", "another member of the team", new Point(0,1))
-    Andrew("Andrew", "and another member of the team", new Point(1,2));
+    Lance("Lance", "A member of the team"),
+    Brian("Brian", "another member of the team"),
+    Andrew("Andrew", "and another member of the team");
     
     private String name;
+    private String title;
 
-    @Override
-    public String toString() {
-        return "TeamMember{" + "name=" + name + ", title=" + title + '}';
-    }
+    TeamMember(String name, String title) {
+        this.name = name;
+        this.title = title;
+    } 
 
     public String getName() {
         return name;
     }
-    private String title;
-    
-    TeamMember(String name, String title) {
-        this.name = name;
-        this.title = title;
-}
-    
+
+    public String getTitle() {
+        return title;
+    }
 }
