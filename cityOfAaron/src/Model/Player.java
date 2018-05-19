@@ -17,7 +17,7 @@ public class Player implements Serializable{
     
     // class instance variables
     private String name;
-    private ArrayList<Game> games = new ArrayList<Game>();
+    private ArrayList<Game> games = new ArrayList<>();
 
     public ArrayList<Game> getGames() {
         return games;

@@ -22,7 +22,7 @@ public enum TeamMember {
 
     TeamMember(String name, String title) {
         this.name = name;
-        this.title = title;
+        this.title = title; 
     } 
 
     public String getName() {
