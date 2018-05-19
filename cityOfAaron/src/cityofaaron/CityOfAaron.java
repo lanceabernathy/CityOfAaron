@@ -9,6 +9,8 @@ package cityofaaron;
 import Model.Location;
 import Model.Player;
 import Model.TeamMember;
+import Model.ListItem;
+import Model.CropData;
 
 /**
  *
@@ -21,14 +23,11 @@ public class CityOfAaron {
      */
     public static void main(String[] args) {
         Player player = new Player();
-        Location currentLocation = new Location();
-        Location currentSymbol = new Location();
+        
         
         player.setName("Fred Flintstone");
         
-        currentLocation.setDescription("Home");
-        currentSymbol.setSymbol("@");
-                
+                 
         String playername = player.getName();
         
         System.out.println("Name = " + playername);
@@ -40,21 +39,46 @@ public class CityOfAaron {
         String member3name = TeamMember.Andrew.getName();
         String member3title = TeamMember.Andrew.getTitle();
         
+
         System.out.println(member1name + ", " + member1title);
         System.out.println(member2name + ", " + member2title);
         System.out.println(member3name + ", " + member3title);
+        
+        
+        //Instance and test for Location
+        Location currentLocation = new Location();
+        Location currentSymbol = new Location();
+        
+        currentLocation.setDescription("Home");
+        currentSymbol.setSymbol("@");
         
         String playerlocation = currentLocation.getDescription();
         String playerSymbol = currentSymbol.getSymbol();
         
         System.out.println("Player is at " + playerlocation);
         System.out.println("Player's Symbol is  " + playerSymbol);
-        
-        
-        
               
        
         
+
+     // instance and test for ListItem
+        ListItem listItemName = new ListItem();
+        ListItem listItemTitle = new ListItem();
+        listItemName.setName("shovel");
+        String itemName = listItemName.getName();
+        listItemTitle.setTitle("tool");
+        String itemTitle = listItemTitle.getTitle();
+
+        System.out.println("ListItem class has a " + itemTitle + " that is a " + itemName);
+
+     // instance and test for CropData
+        CropData dataAcresOwned = new CropData();
+        dataAcresOwned.setAcresOwned(20);
+        int acresOwned = dataAcresOwned.getAcresOwned();
+
+        System.out.println("CropData class says you now own " + acresOwned + " acres.");
+           
+
         
     }
     
