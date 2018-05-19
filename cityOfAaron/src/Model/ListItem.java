@@ -5,15 +5,18 @@
  * Team members: Lance Abernathy, Brian Kenoyer, Andrew Petersen
  */
 
+
 package Model;
+
+import java.io.Serializable;
 
 /**
  * @author andyp
  */
-public class ListItem {
-    
+public class ListItem implements Serializable{
+
     private String name, title;
-    
+
 // get and set name
     public String getName() {
         return name;
@@ -21,7 +24,7 @@ public class ListItem {
     public void setName(String name) {
         this.name = name;
     }
-    
+
 // get and set title
     public String getTitle() {
         return title;
