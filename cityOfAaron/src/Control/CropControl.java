@@ -94,7 +94,7 @@ public int buyLand(int landPrice, int acresToBuy, CropData cropData)
   //population < (acresOwned + acresToBuy) / 10 
    int acresOwned = cropData.getAcresOwned();
    int population = cropData.getPopulation();
-   if ((acresToBuy + acresOwned) /10 < population);
+   if ((acresToBuy + acresOwned) /10 < population)
    return ((acresToBuy + acresOwned) /10);
    //return population;
     
@@ -119,18 +119,5 @@ public int buyLand(int landPrice, int acresToBuy, CropData cropData)
     // Pre-conditions: percentOffering >= 0 and percentOffering <= 100
     // Returns: the amount of wheat for paid for offerings
     //Author: Lance Aberanathy
-    
-public int setOffering(int percentOffering, CropData cropData)
-{
-    //if percentOffering < 0, return -1
-    if (percentOffering < 0)
-    return -1;
-    
-    //if percentOffering > 100, return -1
-     if (percentOffering > 100);
-     return -1;
-     
-     //Amount of wheat to pay in offerings. 
-     int wheatInTithes
-}
+ }
 

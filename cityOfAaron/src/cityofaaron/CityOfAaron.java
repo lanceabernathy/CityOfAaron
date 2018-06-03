@@ -6,6 +6,7 @@
  */
 package cityofaaron;
 
+import Control.CropControl;
 import Model.Location;
 import Model.Player;
 import Model.TeamMember;
@@ -78,7 +79,34 @@ public class CityOfAaron {
 
         System.out.println("CropData class says you now own " + acresOwned + " acres.");
            
+System.out.println("sellLand");
+CropData theSellCrops = new CropData();
+theSellCrops.setWheatInStore(1000);
+theSellCrops.setAcresOwned(2800);
+int toSell = 10;
+int price = 15;
+int sellExpResult = 2790;
+int sellResult = CropControl.sellLand(price, toSell, theSellCrops);
 
+System.out.println("Expected: " + sellExpResult + "\ncalculated: " + sellResult);
+
+System.out.println("buyLand");
+CropData theBuyCrops = new CropData();
+theBuyCrops.setAcresOwned(20);
+theBuyCrops.setWheatInStore(1000);
+theBuyCrops.setPopulation(100);
+int buyPrice = 10;
+int toBuy = 15;
+int expBuyResult = 35;
+int buyResult = CropControl.buyLand(buyPrice, toBuy, theBuyCrops);
+    
+System.out.println("Expected: " + expBuyResult + "\nActual: " + buyResult);
+              
+    }
+    
+
+         
+}
         
     }
     
