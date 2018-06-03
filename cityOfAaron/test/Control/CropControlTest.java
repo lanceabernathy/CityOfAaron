@@ -20,7 +20,7 @@ public class CropControlTest {
 
     /**
      * Test of calcLandPrice method, of class CropControl.
-     */
+     
     @Test
     public void testCalcLandPrice() {
         System.out.println("calcLandPrice");
