@@ -69,5 +69,22 @@ public class CropControlTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+
+    /**
+     * Test of setOffering method, of class CropControl.
+     */
+    @Test
+    public void testSetOffering() {
+        System.out.println("setOffering");
+        int percentOffering = 10;
+        CropData cropData = new CropData();
+        cropData.setHarvest(250);
+        CropControl instance = new CropControl();
+        int expResult = 25;
+        int result = instance.setOffering(percentOffering, cropData);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
     
 }
