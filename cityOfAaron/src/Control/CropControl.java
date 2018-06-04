@@ -140,4 +140,3 @@ public int setOffering(int percentOffering, CropData cropData)
     return offeringBushels;
 }
 }
-
