@@ -139,4 +139,5 @@ public int setOffering(int percentOffering, CropData cropData)
     //Returns: the amount of wheat for paid for offerings
     return offeringBushels;
 }
+}
 
