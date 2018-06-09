@@ -11,17 +11,32 @@ import Model.Player;
 import Model.TeamMember;
 import Model.ListItem;
 import Model.CropData;
+import Model.Game;
+import view.*;
 
-/**
- *
- * @author Lance
- */
+
 public class CityOfAaron {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    
+    // variable for keeping a reference to the Game object
+     private static Game theGame = null;
+     
+     public static Game getTheGame() {
+         return CityOfAaron.theGame;
+     }  
+     
+     public static Game setTheGame() {
+         return CityOfAaron.theGame;
+     }
+          
+    // main function - entry point for the program
+    // runs the main menu
+   
+        public static void main(String[] args) 
+    {
+        
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenuView();
+        
         Player player = new Player();
         
         
@@ -43,7 +58,7 @@ public class CityOfAaron {
         System.out.println(member1name + ", " + member1title);
         System.out.println(member2name + ", " + member2title);
         System.out.println(member3name + ", " + member3title);
-        
+     
         
         //Instance and test for Location
         Location currentLocation = new Location();
