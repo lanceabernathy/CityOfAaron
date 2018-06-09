@@ -7,7 +7,7 @@ package view;
 
 import Model.Game;
 import java.util.Scanner;
-import gameproject.GameProject;
+//import gameproject.GameProject;
 import Model.Player;
 
 public class MainMenuView 
