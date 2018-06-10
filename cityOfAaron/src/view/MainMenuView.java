@@ -5,9 +5,10 @@
 //-------------------------------------------------------------
 package view;
 
+import cityofaaron.CityOfAaron;
 import Model.Game;
 import java.util.Scanner;
-//import gameproject.GameProject;
+import gameproject.GameProject;
 import Model.Player;
 
 public class MainMenuView 
@@ -140,7 +141,24 @@ public class MainMenuView
     GameProject.setTheGame(theGame);
     
     // Display the Banner Page.  --Be creative -- update
-    System.out.println("Welcome to the city of Aaron.");
+    // Hey Lance, they mean creative by just some interesting or catchy heading
+    // something good to suck the player in. You can find the details from the
+    // game requirements document that we got earlier this semester.
+    // Feel free to change to anything you'd like, I just kind of made up
+    // some crap to put it in there and test it.
+    System.out.println(
+            " Welcome to the city of Aaron. You have been called here by the\n" +
+            " poweful leader to take over your position as the new chief\n" +
+            " leader. To ensure the survival of this city and all residents \n" +
+            " here in, you will need to make wise decisions in the following:\n" +
+            " -Buy and sell land.\n -Determine the amount of wheat" +
+            " to plant each year, and to set aside to feed your people.\n" +
+            " -Pay an annual tithe on the harvested wheat.\n" +
+            " \n The lives of your people are in your hands. People will die" +
+            " of starvation if you fail to provide enough wheat. As a result you " +
+            " workforce will diminish slowing your production.\n *Warning - " +
+            " you also have the danger of rats eating your wheat.\n" +
+            " \n Good Luck!\n");
     
     // Create a new Player object
     Player thePlayer = new Player();

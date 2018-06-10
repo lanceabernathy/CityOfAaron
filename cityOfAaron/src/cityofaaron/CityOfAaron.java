@@ -12,6 +12,7 @@ import Model.TeamMember;
 import Model.ListItem;
 import Model.CropData;
 import Model.Game;
+import Control.CropControl;
 import view.*;
 
 
@@ -29,13 +30,14 @@ public class CityOfAaron {
      }
           
     // main function - entry point for the program
-    // runs the main menu
+    // runs the main menu1
    
         public static void main(String[] args) 
     {
         
         MainMenuView mmv = new MainMenuView();
         mmv.displayMenuView();
+                
         
         Player player = new Player();
         
@@ -92,7 +94,52 @@ public class CityOfAaron {
         int acresOwned = dataAcresOwned.getAcresOwned();
 
         System.out.println("CropData class says you now own " + acresOwned + " acres.");
-           
+        
+         // @test sellLand
+        System.out.println("\n");
+        System.out.println("sellLand");
+        CropData theSellCrops = new CropData();
+        theSellCrops.setWheatInStore(1000);
+        theSellCrops.setAcresOwned(2800);
+        int toSell = 10;
+        int price = 15;
+        int sellExpResult = 2790;
+        int sellResult = CropControl.sellLand(price, toSell, theSellCrops);
+        System.out.println("Expected: " + sellExpResult + "\ncalculated: " + sellResult);
+        
+    // @test buyLand
+        System.out.println("\n");
+        System.out.println("buyLand");
+        CropData theBuyCrops = new CropData();
+        theBuyCrops.setAcresOwned(20);
+        theBuyCrops.setWheatInStore(1000);
+        theBuyCrops.setPopulation(100);
+        int buyPrice = 10;
+        int toBuy = 15;
+        int expBuyResult = 35;
+        int buyResult = CropControl.buyLand(buyPrice, toBuy, theBuyCrops);  
+        System.out.println("Expected: " + expBuyResult + "\nActual: " + buyResult);
+
+    // @test feedPeople
+        System.out.println("\n");
+        System.out.println("feedPeople");
+        CropData theFeedCrops = new CropData();
+        theFeedCrops.setWheatInStore(1000);
+        int bushels = 100;
+        int expFeedResult = 10;
+        int feedResult = CropControl.feedPeople(bushels, theFeedCrops);   
+        System.out.println("Expected: " + expFeedResult + "\nActual: " + feedResult);
+
+    // @test plantCrops
+        System.out.println("\n");
+        System.out.println("plantCrops");
+        CropData thePlantCrops = new CropData();
+        theFeedCrops.setWheatInStore(1000);
+        int acres = 100;
+        int land = 300;
+        int expPlantResult = 100;
+        int plantResult = CropControl.plantCrops(acres, land, theFeedCrops); 
+        System.out.println("Expected: " + expPlantResult + "\nActual: " + plantResult);
 
         
     }

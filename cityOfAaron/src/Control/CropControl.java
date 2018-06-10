@@ -7,6 +7,7 @@
 package Control;
 
 import Model.CropData;
+import Model.Game;
 import java.util.Random;
 
 /**
@@ -40,7 +41,7 @@ public class CropControl
     // Pre-conditions: acresToSell >= 0 and acresToSell <= acresOwned
     // Returns: the number of acres owned after the sale
     
-public int sellLand(int landPrice, int acresToSell, CropData cropData)
+public static int sellLand(int landPrice, int acresToSell, CropData cropData)
 {
     
     //if acresToSell < 0, return -1
@@ -75,7 +76,7 @@ public int sellLand(int landPrice, int acresToSell, CropData cropData)
     // Returns: the number of acres owned after the pruchace
     // Returns: the amount of wheat owned after the pruchace.
 
-public int buyLand(int landPrice, int acresToBuy, CropData cropData)
+public static int buyLand(int landPrice, int acresToBuy, CropData cropData)
 {
     
     //if acresToBuy < 0, return -1
@@ -120,7 +121,7 @@ public int buyLand(int landPrice, int acresToBuy, CropData cropData)
     // Returns: the amount of wheat for paid for offerings
     //Author: Lance Aberanathy
 
-public int setOffering(int percentOffering, CropData cropData)
+public static int setOffering(int percentOffering, CropData cropData)
 {
     //if percentOffering < 0, return -1
     if (percentOffering < 0)
@@ -139,4 +140,78 @@ public int setOffering(int percentOffering, CropData cropData)
     //Returns: the amount of wheat for paid for offerings
     return offeringBushels;
 }
+
+    /**
+     * feedPeople Method
+     * 
+     * @param bushelsToFeed
+     * @param cropData
+     * @return bushelsToFeed
+     */
+    public static int feedPeople(int bushelsToFeed, CropData cropData) {
+        // 1. Ask the user “How many bushels of grain do you want to give to the people?”
+
+        // 2. User enters a value.
+	
+
+        // 3. Check to make sure that the value is positive. If it is not, show a message and ask the user to // enter the value again.
+	if (0 > bushelsToFeed) 
+            return -1;
+
+        // 4. Make sure that the city has this much wheat in storage. If not, show a message and ask the 
+        // user to enter the value again.
+        int wheatInStore = cropData.getWheatInStore();
+	if (wheatInStore < bushelsToFeed)
+            return -1;
+
+        // 5. Subtract this amount from the wheat in storage. Display the amount of wheat you have left.
+	wheatInStore -= bushelsToFeed; 
+        cropData.setWheatInStore(wheatInStore);
+
+        // 6. Update the game state to save how many bushels of wheat you have set aside to feed the 
+        // people.
+	return bushelsToFeed;
+    }
+    
+    /**
+     * @param desiredAcres
+     * @param cityLandAvailable
+     * @param cropData
+     * @return
+     */
+    public static int plantCrops(int desiredAcres, int cityLandAvailable, CropData cropData) {
+    // 1. Ask the user “How many acres of land do you want to plant?
+
+    // 2. User enters a value.
+
+    // 3. Check to make sure that the value is positive. If it is not, show a message and ask the user to // enter the value again.
+        if (desiredAcres < 0)
+            return -1;
+
+    // 4. Check to make sure the city has this much land. If not, show a message and ask the user to 
+    // enter a new value.
+        if (desiredAcres > cityLandAvailable)
+    //message  “Not sufficient amount of land available, enter a valid land amount 
+            return -1;
+            
+
+    // 5. Make sure that the city has enough wheat in storage to plant this many acres (You can plant // 2 acres with one bushel of wheat). If not, show a message and ask the user to enter the value 
+    // again.
+        int wheatInStore = cropData.getWheatInStore();
+        if (wheatInStore < (desiredAcres / 2)) 
+    //message  “Not enough wheat in storage, enter a valid value”
+            return -1; 
+
+
+    // 6. Calculate the number of bushels required to plant the crops.
+        int bushelsRequired = bushelsRequired = desiredAcres / 2;
+
+    // 7. Subtract this amount from the wheat in storage. Display the amount of wheat you have left.
+            wheatInStore -= bushelsRequired;
+            cropData.setWheatInStore(wheatInStore);
+
+    // 8. Update game state to save how many acres have been planted.	
+        return desiredAcres;
+
+    }
 }
