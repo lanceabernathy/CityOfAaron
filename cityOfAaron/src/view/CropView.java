@@ -41,6 +41,29 @@ public static void buyLandView()
     // Call the buyLand( ) method in the control layer to buy the land
     CropControl.buyLand(toBuy, price, cropData);
 }
+
+/**
+* The sellLandViewmethod
+* Purpose: interface with the user input for selling land
+* Parameters: none
+* Returns: none
+*/
+public static void sellLandView()
+{
+    // Get the cost of land for this round.
+    int price = CropControl.calcLandPrice();
+    
+    // Prompt the user to enter the number of acres to sell
+    System.out.format("Land is selling for %d bushels per acre.%n",price);
+    System.out.print("How many acres of land do you wish to sell? ");
+    
+    // Get the user’s input and save it.
+    int toSell;
+    toSell= keyboard.nextInt();
+    
+    // Call the buyLand( ) method in the control layer to buy the land
+    CropControl.buyLand(toSell, price, cropData);
+}
     /**
     * The runCropsViewmethod()
     * Purpose: runs the City of Aaron game
@@ -51,6 +74,7 @@ public static void buyLandView()
     {
         // call the buyLandView() method
         buyLandView();
+        sellLandView();
         
         // add calls to the other crop view methods
         // as they are written
