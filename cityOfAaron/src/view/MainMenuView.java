@@ -5,6 +5,7 @@
 //-------------------------------------------------------------
 package view;
 
+import Model.CropData;
 import cityofaaron.CityOfAaron;
 import Model.Game;
 import java.util.Scanner;
@@ -137,8 +138,28 @@ public class MainMenuView
     //Create a new Game object.
     Game theGame = new Game();
     
+    // Create aCropDataobject,
+    CropData cropData= new CropData();
+    
+    // initialize it
+    cropData.setYear(0);
+    cropData.setPopulation(100);
+    cropData.setNewPeople(5);
+    cropData.setCropYield(3);
+    cropData.setNumberWhoDied(0);
+    cropData.setOffering(10);
+    cropData.setWheatInStore(2700);
+    cropData.setAcresOwned(1000);
+    cropData.setAcresPlanted(1000);
+    cropData.setHarvest(3000);
+    cropData.setOfferingBushels(300);
+    cropData.setAcresPlanted(1000);
+    
     // Save a reference to it in the GameProject class.
     GameProject.setTheGame(theGame);
+    
+    // save a reference to it in the Game
+    theGame.setCropData(cropData);
     
     // Display the Banner Page. 
     System.out.println(

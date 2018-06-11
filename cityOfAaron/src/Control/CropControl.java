@@ -10,10 +10,6 @@ import Model.CropData;
 import Model.Game;
 import java.util.Random;
 
-/**
- *
- * @author Lance
- */
 public class CropControl 
 {
     // constants

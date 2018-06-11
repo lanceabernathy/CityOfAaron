@@ -14,6 +14,7 @@ import java.io.Serializable;
 public class Game implements Serializable{
     
     private Player player;
+    private CropData cropData= null;
 
     public Player getPlayer() {
         return player;
@@ -28,6 +29,15 @@ public class Game implements Serializable{
      * @param thePlayer
      */
     public void setThePlayer(Player thePlayer) {
+        
+    }
+
+    public void setCropData(CropData cropData) {
+        
+    }
+
+    public CropData getCropData() {
+        return null;
         
     }
     
