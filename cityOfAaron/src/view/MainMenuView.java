@@ -140,12 +140,7 @@ public class MainMenuView
     // Save a reference to it in the GameProject class.
     GameProject.setTheGame(theGame);
     
-    // Display the Banner Page.  --Be creative -- update
-    // Hey Lance, they mean creative by just some interesting or catchy heading
-    // something good to suck the player in. You can find the details from the
-    // game requirements document that we got earlier this semester.
-    // Feel free to change to anything you'd like, I just kind of made up
-    // some crap to put it in there and test it.
+    // Display the Banner Page. 
     System.out.println(
             " Welcome to the city of Aaron. You have been called here by the\n" +
             " poweful leader to take over your position as the new chief\n" +
@@ -202,7 +197,9 @@ public class MainMenuView
     // ===================================
     public void displayHelpMenuView()
     {
-    System.out.println("display help menu option selected.");
+    //System.out.println("display help menu option selected.");
+    HelpMenuView hmv = new HelpMenuView();
+    hmv.displayMenuView();    
     }
     
     /**
