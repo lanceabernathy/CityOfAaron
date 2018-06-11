@@ -40,22 +40,19 @@ public static void buyLandView()
     
     // Call the buyLand( ) method in the control layer to buy the land
     CropControl.buyLand(toBuy, price, cropData);
-    
+}
     /**
     * The runCropsViewmethod()
-    * Purpose: runs the Hamurabigame
+    * Purpose: runs the City of Aaron game
     * Parameters: none
     * Returns: none
     */
-    //public static void runCropsView()
-    //{
+    public static void runCropsView()
+    {
         // call the buyLandView() method
-      //  buyLandView();
+        buyLandView();
         
         // add calls to the other crop view methods
         // as they are written
-    //}
-    
-}
- 
-}
+    }
+}   
