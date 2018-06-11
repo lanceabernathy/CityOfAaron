@@ -197,7 +197,6 @@ public class MainMenuView
     // ===================================
     public void displayHelpMenuView()
     {
-    //System.out.println("display help menu option selected.");
     HelpMenuView hmv = new HelpMenuView();
     hmv.displayMenuView();    
     }

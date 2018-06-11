@@ -7,11 +7,6 @@ package view;
 
 import java.util.Scanner;
 
-
-/**
- *
- * @author Lance
- */
 public class HelpMenuView {
     
     Scanner keyboard = new Scanner(System.in);
@@ -42,12 +37,10 @@ public class HelpMenuView {
             
             // Determine and display the next view
         } while (menuOption != max);
-        
-        
-    }
+     }
     
     /**
-    * The MainMenuView constructor
+    * The HelpMenuView constructor
     * Purpose: Initialize the menu data
     * Parameters: none
     * Returns: none
@@ -98,7 +91,6 @@ public class HelpMenuView {
         
         // return the value input by the user
         return userInput;
-
     }
     
     /**
@@ -151,5 +143,4 @@ public class HelpMenuView {
     private void displayStoreHouseList() {
     System.out.println("This option will display the contents of the storehouse.");    
     }
-        
 }
