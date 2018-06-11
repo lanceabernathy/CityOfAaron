@@ -212,6 +212,4 @@ public class MainMenuView
     {
     System.out.println("display the save game view option selected.");
     }
-
-    
 }
