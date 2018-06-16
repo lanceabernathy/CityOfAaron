@@ -42,14 +42,14 @@ public static void buyLandView()
     CropControl.buyLand(toBuy, price, cropData);
 }
 
-/**
-* The sellLandViewmethod
-* Purpose: interface with the user input for selling land
-* Parameters: none
-* Returns: none
-*/
-public static void sellLandView()
-{
+    /**
+    * The sellLandViewmethod
+    * Purpose: interface with the user input for selling land
+    * Parameters: none
+    * Returns: none
+    */
+    public static void sellLandView()
+    {
     // Get the cost of land for this round.
     int price = CropControl.calcLandPrice();
     
@@ -63,7 +63,17 @@ public static void sellLandView()
     
     // Call the buyLand( ) method in the control layer to buy the land
     CropControl.buyLand(toSell, price, cropData);
-}
+    }
+    
+    /**
+    * The feedPeopleViewmethod
+    * Purpose: interface with the user input for selling land
+    * Parameters: none
+    * Returns: none
+    */
+    
+    
+    
     /**
     * The runCropsViewmethod()
     * Purpose: runs the City of Aaron game
