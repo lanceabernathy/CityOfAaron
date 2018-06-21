@@ -15,7 +15,11 @@ import java.io.Serializable;
 
 public class CropData implements Serializable{
 
-    private int year, population, acresOwned, cropYield, wheatInStore;
+    public int year;
+    public int population;
+    public int acresOwned;
+
+    private int cropYield, wheatInStore;
     private int numberWhoDied, newPeople, harvest, harvestAfterOffering;
     private int offering, offeringBushels, peopleFed, acresPlanted, numStarved;
     private int eatenByRats, wheatForPeople;
