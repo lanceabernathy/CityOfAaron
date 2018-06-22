@@ -134,9 +134,9 @@ public class GameMenuView {
     }
 
     private void startManageCrops() {
-    //System.out.println("This option will allow you to manage the crops.");
-   CropView cv = new CropView();
-   cv.runCropView();
+    System.out.println("This option will allow you to manage the crops.");
+   //CropView cv = new CropView();
+   //cv.runCropView();
     }
     
 }
