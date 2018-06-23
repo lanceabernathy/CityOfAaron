@@ -5,6 +5,7 @@
  */
 package view;
 
+import Model.TeamMember;
 import java.util.Scanner;
 
 public class ListView {
@@ -122,7 +123,16 @@ public class ListView {
     }
     
     private void displayViewDevTeam() {
-    System.out.println("This option will display a list of the dev team.");    
+        String[] authors = new String[4];
+        authors[0] = TeamMember.Lance.getName();
+        authors[1] = TeamMember.Lance.getTitle();
+        authors[2] = TeamMember.Andrew.getName();
+        authors[3] = TeamMember.Andrew.getTitle();
+        
+        for (int i = 0; i < authors.length; i = i + 2){
+            System.out.println(authors[i] + ", " + authors[i+1]);
+            
+        }
     }
 
     public void viewAnimals() {

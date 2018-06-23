@@ -51,16 +51,13 @@ public class CityOfAaron {
         
         String member1name = TeamMember.Lance.getName();
         String member1title = TeamMember.Lance.getTitle();
-        String member2name = TeamMember.Brian.getName();
-        String member2title = TeamMember.Brian.getTitle();
-        String member3name = TeamMember.Andrew.getName();
-        String member3title = TeamMember.Andrew.getTitle();
+        String member2name = TeamMember.Andrew.getName();
+        String member2title = TeamMember.Andrew.getTitle();
         
 
         System.out.println(member1name + ", " + member1title);
         System.out.println(member2name + ", " + member2title);
-        System.out.println(member3name + ", " + member3title);
-     
+            
         
         //Instance and test for Location
         Location currentLocation = new Location();

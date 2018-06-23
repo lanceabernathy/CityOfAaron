@@ -57,7 +57,7 @@ public class GameMenuView {
             " 2 - View/Print a list\n" +
             " 3 - Move to a new location\n" +
             " 4 - Manage the Crops\n" +
-            " 5 - REturn to the Main Menu.\n";
+            " 5 - Return to the Main Menu.\n";
 
         max = 5;
     }

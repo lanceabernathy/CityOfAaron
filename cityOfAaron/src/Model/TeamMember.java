@@ -13,9 +13,8 @@ import java.awt.Point;
  */
 public enum TeamMember {
     
-    Lance("Lance", "A member of the team"),
-    Brian("Brian", "another member of the team"),
-    Andrew("Andrew", "and another member of the team");
+    Lance("Lance Abernathy", "Team member from California"),
+    Andrew("Andrew Petersen", "Team member from Nevada");
     
     private String name;
     private String title;
