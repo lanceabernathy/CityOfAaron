@@ -1,20 +1,20 @@
-// The HelpMenuView class - part of the view layer
-// Object of this class manages the main menu
-// Author: Abernathy, Petersen team
-// Date last modified: June 2018
-//-------------------------------------------------------------
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package view;
 
 import java.util.Scanner;
 
-public class GameMenuView {
+public class ListView {
     
-    Scanner keyboard = new Scanner(System.in);
-    private String theGameMenu;
-    private int max;
-    
-    /**
-    * The displayHelpView method
+        Scanner keyboard = new Scanner(System.in);
+        private String listMenu;
+        private int max;
+        
+            /**
+    * The displayListView method
     * Purpose: displays the menu, gets the user's input, and does the
     * selected action
     * Parameters: none
@@ -27,7 +27,7 @@ public class GameMenuView {
         do
         {
             // Display the menu
-            System.out.println(theGameMenu);
+            System.out.println(listMenu);
             
             // Prompt the user and get the user’s input
             menuOption = getMenuOption();
@@ -47,17 +47,17 @@ public class GameMenuView {
     */
     // ===================================
         
-    public GameMenuView()
+    public ListView()
     {
-        theGameMenu = "\n" +
+        listMenu = "\n" +
             "**********************************\n" +
-            "* CITY OF AARON: GAME MENU *\n" +
+            "* CITY OF AARON: LIST MENU *\n" +
             "**********************************\n" +
-            " 1 - View the map\n" +
-            " 2 - View/Print a list\n" +
-            " 3 - Move to a new location\n" +
-            " 4 - Manage the Crops\n" +
-            " 5 - REturn to the Main Menu.\n";
+            " 1 - View the development team\n" +
+            " 2 - View a list of animals\n" +
+            " 3 - View a list of tools\n" +
+            " 4 - View a list of provisions\n" +
+            " 5 - Return to the game menu\n";
 
         max = 5;
     }
@@ -104,48 +104,40 @@ public class GameMenuView {
     {
         switch (option)
         {
-            case 1: // if the option is 1, call displayViewTheMap( )
-                displayViewTheMap();
+            case 1: // if the option is 1, call viewDevTeam( )
+                displayViewDevTeam();
                 break;
-            case 2: // if the option is 2, call viewList( )
-                viewList();
+            case 2: // if the option is 2, call viewAnimals( )
+                viewAnimals();
                 break;
-            case 3: // if the option is 3, call startMoveNewLocation( )
-                startMoveNewLocation();
+            case 3: // if the option is 3, call viewTools( )
+                viewTools();
                 break;
-            case 4: // if the option is 4, call startManageCrops( )
-                startManageCrops();
+            case 4: // if the option is 4, call viewProvisions( )
+                viewProvisions();
                 break;
             case 5: // if the option is 5, return to main menu
                 break;
         }        
     }
     
-    private void displayViewTheMap() {
-    System.out.println("This option will display the map.");    
+    private void displayViewDevTeam() {
+    System.out.println("This option will display a list of the dev team.");    
     }
 
-    /**
-    *The viewList() method
-    * Purpose: Creates a ViewList object and calls its
-    * displayMenuView ( ) method
-    * Parameters: none
-    * Returns: none
-    */
-    public void viewList()
-    {
-    ListView lv = new ListView();
-    lv.displayMenuView();
+    public void viewAnimals() {
+    System.out.println("This option will display a list of animals."); 
     } 
     
-    private void startMoveNewLocation() {
-    System.out.println("This option will let you move to a new location.");    
+    private void viewTools() {
+    System.out.println("This option will display a list of tools");    
     }
 
-    private void startManageCrops() {
-    System.out.println("This option will allow you to manage the crops.");
-   //CropView cv = new CropView();
-   //cv.runCropView();
+    private void viewProvisions() {
+    System.out.println("This option will display a list provisions.");
+
     }
     
 }
+
+    
