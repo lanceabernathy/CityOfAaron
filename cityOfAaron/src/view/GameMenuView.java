@@ -5,6 +5,8 @@
 //-------------------------------------------------------------
 package view;
 
+import Control.GameControl;
+import Model.Map;
 import java.util.Scanner;
 
 public class GameMenuView {
@@ -122,7 +124,8 @@ public class GameMenuView {
     }
     
     private void displayViewTheMap() {
-    System.out.println("This option will display the map.");    
+   System.out.println("This option will display the map.");    
+       
     }
 
     /**

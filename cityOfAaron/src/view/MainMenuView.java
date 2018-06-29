@@ -5,6 +5,7 @@
 //-------------------------------------------------------------
 package view;
 
+import Control.GameControl;
 import Model.CropData;
 import cityofaaron.CityOfAaron;
 import Model.Game;
@@ -83,30 +84,7 @@ public class MainMenuView extends MenuView
     {
     //Create a new Game object.
     Game theGame = new Game();
-    
-    // Create aCropDataobject,
-    CropData cropData= new CropData();
-    
-    // initialize it
-    cropData.setYear(0);
-    cropData.setPopulation(100);
-    cropData.setNewPeople(5);
-    cropData.setCropYield(3);
-    cropData.setNumberWhoDied(0);
-    cropData.setOffering(10);
-    cropData.setWheatInStore(2700);
-    cropData.setAcresOwned(1000);
-    cropData.setAcresPlanted(1000);
-    cropData.setHarvest(3000);
-    cropData.setOfferingBushels(300);
-    cropData.setAcresPlanted(1000);
-    
-    // Save a reference to it in the GameProject class.
-    GameProject.setTheGame(theGame);
-    
-    // save a reference to it in the Game
-    theGame.setCropData(cropData);
-    
+        
     // Display the Banner Page. 
     System.out.println(
             " Welcome to the city of Aaron. You have been called here by the\n" +
@@ -138,6 +116,9 @@ public class MainMenuView extends MenuView
 
     // Display a welcome message
     System.out.println("Welcome " + name + " have fun.");
+    
+    // call the createNewGame( ) method. Pass the name as a parameter
+    GameControl.createNewGame(name);
     
     // Display the Game menu
     GameMenuView gmv = new GameMenuView();

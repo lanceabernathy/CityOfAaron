@@ -31,6 +31,10 @@ public class CityOfAaron {
           
     // main function - entry point for the program
     // runs the main menu1
+     
+      public static void setCurrentGame(Game theGame) {
+        
+    }
    
         public static void main(String[] args) 
     {
@@ -132,5 +136,7 @@ public class CityOfAaron {
 
         
     }
+
+   
     
 }

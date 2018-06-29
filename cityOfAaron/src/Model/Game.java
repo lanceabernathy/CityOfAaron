@@ -40,6 +40,10 @@ public class Game implements Serializable{
         return null;
         
     }
+
+    public void setMap(Map theMap) {
+       
+    }
     
     
     
