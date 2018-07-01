@@ -6,12 +6,7 @@
  */
 package cityofaaron;
 
-import Model.Location;
-import Model.Player;
-import Model.TeamMember;
-import Model.ListItem;
-import Model.CropData;
-import Model.Game;
+import Model.*;
 import Control.CropControl;
 import view.*;
 
@@ -19,8 +14,8 @@ import view.*;
 public class CityOfAaron {
     
     // variable for keeping a reference to the Game object
-     private static Game theGame = null;
-     
+    private static Game theGame;
+          
      public static Game getTheGame() {
          return CityOfAaron.theGame;
      }  

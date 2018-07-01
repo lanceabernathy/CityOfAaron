@@ -6,8 +6,9 @@
 package view;
 
 import Control.GameControl;
-import Model.Map;
+import Model.*;
 import java.util.Scanner;
+import cityofaaron.CityOfAaron;
 
 public class GameMenuView {
     
@@ -123,11 +124,11 @@ public class GameMenuView {
         }        
     }
     
-    private void displayViewTheMap() {
-   System.out.println("This option will display the map.");    
-       
+    private static void displayViewTheMap() {
+    //System.out.println("This option will display the map.");    
+    GameControl gc = new GameControl();
+    gc.displayMap();
     }
-
     /**
     *The viewList() method
     * Purpose: Creates a ViewList object and calls its

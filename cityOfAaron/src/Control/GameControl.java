@@ -12,12 +12,14 @@ import Model.*;
 
 public class GameControl 
 {
+  
     // size of the Locations array
     private static final int MAX_ROW = 5;
     private static final int MAX_COL = 5;
     
     // reference to a Game object
-    private static Game theGame;
+    private static Game theGame = CityOfAaron.getTheGame();
+    //Map theMap = theGame.setMap();
     
     public static void createNewGame(String name)
     {
@@ -35,6 +37,7 @@ public class GameControl
         // method prologue ….
     public static void createCropDataObject()
         {
+            
             CropData theCrops = new CropData();
             
             theCrops.setYear(0);
@@ -52,6 +55,8 @@ public class GameControl
             
             // Save the cropData in the Game object
             theGame.setCropData(theCrops);
+            System.out.println(theCrops.getAcresOwned());
+            
         }
         // create the list of animals
         // create the list of tools
@@ -68,6 +73,7 @@ public class GameControl
         {
             // create the Map object,
             // refer to the Map constructor
+            //Map theMap = new Map(MAX_ROW, MAX_COL);
             Map theMap = new Map(MAX_ROW, MAX_COL);
             
             // create a string that will go in the Location objects
@@ -82,7 +88,7 @@ public class GameControl
             // use setters in the Location class to set the description and symbol
             loc.setDescription(river);
             loc.setSymbol("~~~");
-            
+                       
             // set this location object in each cell of the array in column 4
             for(int i = 0; i < MAX_ROW; i++)
             {
@@ -106,7 +112,7 @@ public class GameControl
             // set this location object in each cell of the array in column 4
             for(int i = 0; i < MAX_ROW; i++)
             {
-                theMap.setLocation(i, 1, loc);
+                theMap.setLocation(i, 0, loc);
             }
             
             // create a string that will go in the Location objects
@@ -159,7 +165,7 @@ public class GameControl
             
             for(int i = 1; i < MAX_ROW -1; i++)
             {
-                theMap.setLocation(3, i, loc);
+                theMap.setLocation(i, 3, loc);
             }
             
             // define the string for the rulers court location
@@ -201,14 +207,14 @@ public class GameControl
             // set the village location with a hint
             loc = new Location();
             loc.setDescription(Village + "\nA person can eat 20 bushels of grain a year.");
-            loc.setSymbol("@@@");
+            loc.setSymbol("vvv");
             theMap.setLocation(1, 2, loc);
             
             // define the string for the granary location
             String Granary = "This is the Granary. Where all the wheat is gathered,\n" +
             " stored and turned into flour to feed the peop\n";
             
-            // set the grany location with a hint
+            // set the granary location
             loc = new Location();
             loc.setDescription(Granary);
             loc.setSymbol("...");
@@ -218,14 +224,45 @@ public class GameControl
             String Storehouse = "This is the Storehouse. Where all tools and items,\n" +
             " are kept.\n";
             
-            // set the grany location with a hint
+            // set the Storehouse location
             loc = new Location();
             loc.setDescription(Storehouse);
             loc.setSymbol("...");
             theMap.setLocation(3, 2, loc);
             
             theGame.setMap(theMap);
+            Location[][] locations = theMap.getLocation();
+            //System.out.println(locations[2][1]);
+    
+                for (int i = 0; i < locations.length; i++) 
+                {
+                    for (int j = 0; j < locations[i].length; j++) 
+                    {
+                        //System.out.println(locations[i][j]);
+                        System.out.print(locations[i][j]);
+                    }
+                }
+            
 
         }
+        
+        public static void displayMap() {
+                    
+            //Game tg = CityOfAaron.getTheGame();
+            Map theMap = theGame.getMap();
+            System.out.println(theGame.getPlayer());
+            CropData theCrops = theGame.getCropData();
+            System.out.println(theCrops.getAcresOwned());
+            Location[][] locations = theMap.getLocation();
+            //System.out.println(locations[2][1]);
     
-}
+                for (int i = 0; i < locations.length; i++) 
+                {
+                    for (int j = 0; j < locations[i].length; j++) 
+                    {
+                        System.out.println(locations[i][j]);
+                    }
+                }
+            }
+ }
+        

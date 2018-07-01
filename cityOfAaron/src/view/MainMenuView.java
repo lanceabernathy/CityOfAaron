@@ -6,12 +6,10 @@
 package view;
 
 import Control.GameControl;
-import Model.CropData;
+import Model.*;
 import cityofaaron.CityOfAaron;
-import Model.Game;
 import java.util.Scanner;
 import gameproject.GameProject;
-import Model.Player;
 
 public class MainMenuView extends MenuView
 {   
@@ -83,7 +81,7 @@ public class MainMenuView extends MenuView
     public void startNewGame()
     {
     //Create a new Game object.
-    Game theGame = new Game();
+    //Game theGame = new Game();
         
     // Display the Banner Page. 
     System.out.println(
@@ -112,18 +110,22 @@ public class MainMenuView extends MenuView
     thePlayer.setName(name);
     
     // Save a reference to the player object in the Game object
-    theGame.setThePlayer(thePlayer);
+    //theGame.setThePlayer(thePlayer);
 
     // Display a welcome message
     System.out.println("Welcome " + name + " have fun.");
     
     // call the createNewGame( ) method. Pass the name as a parameter
     GameControl.createNewGame(name);
+    GameControl.createCropDataObject();
+    GameControl.createMap();
+    
+    
     
     // Display the Game menu
     GameMenuView gmv = new GameMenuView();
     gmv.displayMenuView(); 
-
+    
     }
     
      /**
