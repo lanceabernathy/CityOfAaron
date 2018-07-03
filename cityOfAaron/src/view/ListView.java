@@ -5,6 +5,7 @@
  */
 package view;
 
+import Control.GameControl;
 import Model.TeamMember;
 import java.util.Scanner;
 
@@ -132,18 +133,21 @@ public class ListView {
         System.out.println("The city of Aaron Development Team");
         System.out.println("");
         
-        for (int i = 0; i < authors.length; i = i + 2){
-            System.out.println(authors[i] + ", " + authors[i+1]);
-            
+        //for (int i = 0; i < authors.length; i = i + 2){
+        //    System.out.println(authors[i] + ", " + authors[i+1]);
+            for (String a : authors)
+                System.out.println(a);
         }
-    }
+    
 
     public void viewAnimals() {
-    System.out.println("This option will display a list of animals."); 
+        GameControl gc = new GameControl();
+        gc.displayAnimals();
     } 
     
     private void viewTools() {
-    System.out.println("This option will display a list of tools");    
+        GameControl gc = new GameControl();
+        gc.displayTools();
     }
 
     private void viewProvisions() {

@@ -66,7 +66,7 @@ public class CityOfAaron {
        
         
 
-     // instance and test for ListItem
+        /*instance and test for ListItem
         ListItem listItemName = new ListItem();
         ListItem listItemTitle = new ListItem();
         listItemName.setName("shovel");
@@ -75,7 +75,7 @@ public class CityOfAaron {
         String itemTitle = listItemTitle.getTitle();
 
         System.out.println("ListItem class has a " + itemTitle + " that is a " + itemName);
-
+*/
      // instance and test for CropData
         CropData dataAcresOwned = new CropData();
         dataAcresOwned.setAcresOwned(20);

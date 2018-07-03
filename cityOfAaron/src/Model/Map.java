@@ -65,14 +65,10 @@ public class Map
         this.locations[row][col] = _location;
     } 
 
-    //public Location[][] getLocation() {
-      //  return this.locations;
-        
-    //}
-
     public Location[][] getLocation() {
-        return locations;
+        return this.locations;
         
     }
 
+   
 }

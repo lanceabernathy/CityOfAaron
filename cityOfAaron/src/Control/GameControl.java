@@ -55,11 +55,35 @@ public class GameControl
             
             // Save the cropData in the Game object
             theGame.setCropData(theCrops);
-            System.out.println(theCrops.getAcresOwned());
+            //System.out.println(theCrops.getAcresOwned());
             
         }
         // create the list of animals
+        public static void createAnimalList()
+        {
+            ArrayList<ListItem> animals = new ArrayList<>();
+            animals.add(new ListItem("cows", 12));
+            animals.add(new ListItem("horses", 3));
+            animals.add(new ListItem("pigs", 7));
+            animals.add(new ListItem("goats", 4));
+        
+            // Save the animals in the game
+            theGame.setAnimals(animals);
+           // System.out.print(animals.get(0));
+        }
+    
         // create the list of tools
+        public static void creatToolList()
+        {
+            ArrayList<ListItem> tools = new ArrayList<>();
+            tools.add(new ListItem("hammer", 5));
+            tools.add(new ListItem("Shovel", 10));
+            tools.add(new ListItem("scythe", 11));
+            tools.add(new ListItem("plow", 2));
+            
+            // Save the tools in the game
+            theGame.setTools(tools);
+        }
         //create the list of provisions
         
         // create the Locations and the Map object
@@ -264,5 +288,23 @@ public class GameControl
                     }
                 }
             }
+        
+        public void displayAnimals() {
+            
+        System.out.print("List of Animals: ");
+                for (int a : animals)
+                System.out.println(a);
+         
+        }
+        
+        public void displayTools() {
+            
+        System.out.print("List of Tools: ");
+                for (int a : tools)
+                System.out.println(a);
+         
+        }
+        
+
  }
         

@@ -9,6 +9,7 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * @author andyp
@@ -17,7 +18,15 @@ public class ListItem implements Serializable{
 
     private String name, title;
 
-// get and set name
+    public ListItem(String animals, int i) {
+       
+    }
+
+    public ListItem() {
+        
+    }
+    
+    // get and set name
     public String getName() {
         return name;
     }
@@ -31,5 +40,9 @@ public class ListItem implements Serializable{
     }
     public void setTitle(String title) {
         this.title = title;
+    }
+    
+    public ArrayList<ListItem> getAnimals() {
+        return this.getAnimals();
     }
 }
