@@ -8,6 +8,7 @@ package Control;
 
 import Model.CropData;
 import Model.Game;
+import exceptions.CropException;
 import java.util.Random;
 
 public class CropControl 
@@ -72,27 +73,27 @@ public static int sellLand(int landPrice, int acresToSell, CropData cropData)
     // Returns: the number of acres owned after the pruchace
     // Returns: the amount of wheat owned after the pruchace.
 
-public static int buyLand(int landPrice, int acresToBuy, CropData cropData)
+public static void buyLand(int landPrice, int acresToBuy, CropData cropData) throws CropException
 {
     
     //if acresToBuy < 0, return -1
     if (acresToBuy < 0)
-    return -1;
+    throw new CropException("A negative value was input");
        
    //acresToBuy <= landPrice * wheatInStore
    int wheatInStore = cropData.getWheatInStore();
    if (acresToBuy > landPrice * wheatInStore)
-   return -1;
+   throw new CropException("There is insufficient wheat to buy this much land");
    
    //wheatInStore < acresToBuy * landPrice
-  if (acresToBuy * landPrice > wheatInStore)
-  return -1;
+  //if (acresToBuy * landPrice > wheatInStore)
+  //return -1;
       
   //population < (acresOwned + acresToBuy) / 10 
    int acresOwned = cropData.getAcresOwned();
    int population = cropData.getPopulation();
    if ((acresToBuy + acresOwned) /10 < population)
-   return -1;
+   throw new CropException("There is insufficient population to farm this much land");
    //return population;
     
    //acresOwned = acresOwned + acresToBuy
@@ -104,7 +105,7 @@ public static int buyLand(int landPrice, int acresToBuy, CropData cropData)
     cropData.setWheatInStore(wheatInStore);
     
      //return acresOwned
-    return acresOwned;
+    //return acresOwned;
         
 }
 

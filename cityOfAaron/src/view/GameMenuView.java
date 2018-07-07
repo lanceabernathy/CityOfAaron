@@ -126,8 +126,7 @@ public class GameMenuView {
     
     private static void displayViewTheMap() {
     //System.out.println("This option will display the map.");    
-    GameControl gc = new GameControl();
-    gc.displayMap();
+    GameControl.displayMap();
     }
     /**
     *The viewList() method
@@ -147,7 +146,9 @@ public class GameMenuView {
     }
 
     private void startManageCrops() {
-    System.out.println("This option will allow you to manage the crops.");
+    CropView.buyLandView();
+    //System.out.println("This option will allow you to manage the crops.");
+    
    //CropView cv = new CropView();
    //cv.runCropView();
     }

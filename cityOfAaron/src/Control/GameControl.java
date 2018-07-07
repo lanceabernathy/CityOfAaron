@@ -30,7 +30,7 @@ public class GameControl
         // create the player object. Save it in the game object
         Player thePlayer = new Player();
         thePlayer.setName(name);
-        theGame.setPlayer(thePlayer); 
+        theGame.setPlayer(thePlayer);
     }
         
         // create the CropData object
@@ -66,6 +66,7 @@ public class GameControl
             animals.add(new ListItem("horses", 3));
             animals.add(new ListItem("pigs", 7));
             animals.add(new ListItem("goats", 4));
+            System.out.println(animals);
         
             // Save the animals in the game
             theGame.setAnimals(animals);
@@ -255,7 +256,7 @@ public class GameControl
             theMap.setLocation(3, 2, loc);
             
             theGame.setMap(theMap);
-            Location[][] locations = theMap.getLocation();
+            /*Location[][] locations = theMap.getLocation();
             //System.out.println(locations[2][1]);
     
                 for (int i = 0; i < locations.length; i++) 
@@ -266,7 +267,7 @@ public class GameControl
                         System.out.print(locations[i][j]);
                     }
                 }
-            
+            */
 
         }
         
@@ -292,16 +293,16 @@ public class GameControl
         public void displayAnimals() {
             
         System.out.print("List of Animals: ");
-                for (int a : animals)
-                System.out.println(a);
+                //for (int a : animals)
+                //System.out.println(a);
          
         }
         
         public void displayTools() {
             
         System.out.print("List of Tools: ");
-                for (int a : tools)
-                System.out.println(a);
+                //for (int a : tools)
+                //System.out.println(a);
          
         }
         

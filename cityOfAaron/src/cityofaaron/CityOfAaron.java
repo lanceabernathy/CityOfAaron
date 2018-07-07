@@ -38,20 +38,20 @@ public class CityOfAaron {
         mmv.displayMenu();
                 
         
-        Player player = new Player();
+        //Player player = new Player();
         
         
-        player.setName("Fred Flintstone");
+        //player.setName("Fred Flintstone");
         
                  
-        String playername = player.getName();
+        //String playername = player.getName();
         
-        System.out.println("Name = " + playername);
+        //System.out.println("Name = " + playername);
         
          
         
         //Instance and test for Location
-        Location currentLocation = new Location();
+        /*Location currentLocation = new Location();
         Location currentSymbol = new Location();
         
         currentLocation.setDescription("Home");
@@ -62,7 +62,7 @@ public class CityOfAaron {
         
         System.out.println("Player is at " + playerlocation);
         System.out.println("Player's Symbol is  " + playerSymbol);
-              
+        */      
        
         
 
@@ -76,7 +76,7 @@ public class CityOfAaron {
 
         System.out.println("ListItem class has a " + itemTitle + " that is a " + itemName);
 */
-     // instance and test for CropData
+     /* instance and test for CropData
         CropData dataAcresOwned = new CropData();
         dataAcresOwned.setAcresOwned(20);
         int acresOwned = dataAcresOwned.getAcresOwned();
@@ -96,7 +96,7 @@ public class CityOfAaron {
         System.out.println("Expected: " + sellExpResult + "\ncalculated: " + sellResult);
         
     // @test buyLand
-        System.out.println("\n");
+        /*System.out.println("\n");
         System.out.println("buyLand");
         CropData theBuyCrops = new CropData();
         theBuyCrops.setAcresOwned(20);
@@ -107,8 +107,8 @@ public class CityOfAaron {
         int expBuyResult = 35;
         int buyResult = CropControl.buyLand(buyPrice, toBuy, theBuyCrops);  
         System.out.println("Expected: " + expBuyResult + "\nActual: " + buyResult);
-
-    // @test feedPeople
+*/
+    /* @test feedPeople
         System.out.println("\n");
         System.out.println("feedPeople");
         CropData theFeedCrops = new CropData();
@@ -129,7 +129,7 @@ public class CityOfAaron {
         int plantResult = CropControl.plantCrops(acres, land, theFeedCrops); 
         System.out.println("Expected: " + expPlantResult + "\nActual: " + plantResult);
 
-        
+        */
     }
 
    

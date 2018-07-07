@@ -18,6 +18,7 @@ public class Game implements Serializable{
     private Player player;
     private CropData cropData;
     private Map theMap;
+    public boolean thePlayer;
 
     public Player getPlayer() {
         return player;
