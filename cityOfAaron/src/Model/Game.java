@@ -15,70 +15,67 @@ import Control.*;
  */
 public class Game implements Serializable{
     
-    private Player player;
-    private CropData cropData;
+    private Player thePlayer;
+    private CropData theCrops;
     private Map theMap;
-    public boolean thePlayer;
+    //public boolean thePlayer;
+    private static Game theGame;
+    private ArrayList<ListItem> animals;
+    private ArrayList<ListItem> tools;
 
-    public Player getPlayer() {
-        return player;
+    public Player getThePlayer() {
+        return thePlayer;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
-
-    /**
-     *
-     * @param thePlayer
-     */
     public void setThePlayer(Player thePlayer) {
-        
+        this.thePlayer = thePlayer;
     }
+
 
     public void setCropData(CropData cropData) {
-        
+        this.theCrops = cropData;
     }
 
     public CropData getCropData() {
-        return this.cropData;
+        return theCrops;
         
     }
 
-    public void setMap(Map theMap) {
-       
+    public void setTheMap(Map theMap) {
+       this.theMap = theMap;
     }
 
-    public Map getMap() {
-        return this.theMap;
-        
+    public Map getTheMap() {
+        return theMap;
     }
 
 
     public void setAnimals(ArrayList<ListItem> animals) {
-        
+        this.animals = animals;
     }
     
     public ArrayList<ListItem> getAnimals() {
-        return this.getAnimals();
+        return animals;
         
     }
     
     public ArrayList<ListItem> setAnimals() {
-        return this.setAnimals();
+        return animals;
     }
 
     public void setTools(ArrayList<ListItem> tools) {
-        
+        this.tools = tools;
     }
-
-    public int[] getTools() {
-        return this.tools();
+    
+    public ArrayList<ListItem> getTools() {
+        return tools;
     }
-
-    private int[] tools() {
-        return this.tools();
-    }
-
+    
        
+     public static void setCurrentGame(Game game){
+        theGame = game;
+    }
+    public static Game getCurrentGame(){
+        return theGame;
+    }   
 }

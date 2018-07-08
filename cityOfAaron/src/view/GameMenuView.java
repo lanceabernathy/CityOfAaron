@@ -33,6 +33,7 @@ public class GameMenuView {
             System.out.println(theGameMenu);
             
             // Prompt the user and get the user’s input
+            System.out.println("What would you like to do?");
             menuOption = getMenuOption();
             
             // Perform the desired action
@@ -146,7 +147,7 @@ public class GameMenuView {
     }
 
     private void startManageCrops() {
-    CropView.buyLandView();
+    CropView.runCropsView();
     //System.out.println("This option will allow you to manage the crops.");
     
    //CropView cv = new CropView();

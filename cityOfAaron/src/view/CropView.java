@@ -17,8 +17,8 @@ public class CropView {
 private static Scanner keyboard = new Scanner(System.in);
 
 // Get references to the Game object and the CropDataobject
-private static Game theGame = CityOfAaron.getTheGame();
-private static CropData cropData = theGame.getCropData();
+//private static Game theGame = CityOfAaron.getTheGame();
+//private static CropData cropData = theGame.getCropData();
 
 /**
 * The buyLandViewmethod
@@ -28,6 +28,8 @@ private static CropData cropData = theGame.getCropData();
 */
 public static void buyLandView()
 {
+    Game theGame = CityOfAaron.getTheGame();
+    CropData cropData = theGame.getCropData();
     // Get the cost of land for this round.
     int price = CropControl.calcLandPrice();
     
@@ -66,21 +68,36 @@ public static void buyLandView()
     */
     public static void sellLandView()
     {
+    Game theGame = CityOfAaron.getTheGame();
+    CropData cropData = theGame.getCropData();
     // Get the cost of land for this round.
     int price = CropControl.calcLandPrice();
     
     // Prompt the user to enter the number of acres to sell
     System.out.format("Land is selling for %d bushels per acre.%n",price);
-    System.out.print("How many acres of land do you wish to sell? ");
+    
     
     // Get the user’s input and save it.
     int toSell;
-    toSell= keyboard.nextInt();
-    
-    // Call the buyLand( ) method in the control layer to buy the land
-    //CropControl.buyLand(toSell, price, cropData);
-    }
-    
+    boolean paramsNotOkay;
+    do
+    {
+        paramsNotOkay = false;
+        System.out.print("How many acres of land do you wish to sell? ");
+        toSell = keyboard.nextInt();
+        try
+        {    
+            // Call the buyLand( ) method in the control layer to buy the land
+            CropControl.buyLand(toSell, price, cropData);
+        }    
+        catch(CropException e)
+        {
+            System.out.println("I am sorry master, I cannot do this.");
+            System.out.println(e.getMessage());
+            paramsNotOkay = true;
+        }
+    }while(paramsNotOkay);
+    }    
     /**
     * The feedPeopleViewmethod
     * Purpose: interface with the user input for selling land
@@ -99,7 +116,7 @@ public static void buyLandView()
     public static void runCropsView()
     {
         // call the buyLandView() method
-        buyLandView();
+        //buyLandView();
         sellLandView();
         
         // add calls to the other crop view methods

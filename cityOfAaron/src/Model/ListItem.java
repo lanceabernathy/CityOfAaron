@@ -16,33 +16,33 @@ import java.util.ArrayList;
  */
 public class ListItem implements Serializable{
 
-    private String name, title;
+    private String name;
+    private int number;
 
-    public ListItem(String animals, int i) {
+    public ListItem(String name, int i) {
+       this.name = name;
+       this.number = i;
        
     }
 
-    public ListItem() {
-        
-    }
-    
+       
     // get and set name
     public String getName() {
         return name;
     }
+    
+    public int getNumber(){
+        return number;
+    }
     public void setName(String name) {
         this.name = name;
     }
+    public void setNumber(int number){
+        this.number = number;
+    }
 
-// get and set title
-    public String getTitle() {
-        return title;
-    }
-    public void setTitle(String title) {
-        this.title = title;
-    }
+
     
-    public ArrayList<ListItem> getAnimals() {
-        return this.getAnimals();
-    }
+    
+   
 }

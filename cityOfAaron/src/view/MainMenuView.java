@@ -120,7 +120,7 @@ public class MainMenuView extends MenuView
     GameControl.createCropDataObject();
     GameControl.createMap();
     GameControl.createAnimalList();
-    
+    GameControl.createToolList();
     
     
     // Display the Game menu

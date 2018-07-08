@@ -9,8 +9,9 @@ package Control;
 import java.util.ArrayList;
 import cityofaaron.CityOfAaron;
 import Model.*;
+import java.io.Serializable;
 
-public class GameControl 
+public class GameControl implements Serializable
 {
   
     // size of the Locations array
@@ -18,7 +19,7 @@ public class GameControl
     private static final int MAX_COL = 5;
     
     // reference to a Game object
-    private static Game theGame = CityOfAaron.getTheGame();
+    private static Game theGame; //= CityOfAaron.getTheGame();
     //Map theMap = theGame.setMap();
     
     public static void createNewGame(String name)
@@ -30,7 +31,10 @@ public class GameControl
         // create the player object. Save it in the game object
         Player thePlayer = new Player();
         thePlayer.setName(name);
-        theGame.setPlayer(thePlayer);
+        theGame.setThePlayer(thePlayer);
+        //System.out.print("Player set");
+        
+
     }
         
         // create the CropData object
@@ -55,8 +59,8 @@ public class GameControl
             
             // Save the cropData in the Game object
             theGame.setCropData(theCrops);
-            //System.out.println(theCrops.getAcresOwned());
-            
+            System.out.println("Crop Data Set");
+                        
         }
         // create the list of animals
         public static void createAnimalList()
@@ -66,15 +70,15 @@ public class GameControl
             animals.add(new ListItem("horses", 3));
             animals.add(new ListItem("pigs", 7));
             animals.add(new ListItem("goats", 4));
-            System.out.println(animals);
-        
+            
             // Save the animals in the game
             theGame.setAnimals(animals);
+            System.out.println("Animal list set");
            // System.out.print(animals.get(0));
         }
     
         // create the list of tools
-        public static void creatToolList()
+        public static void createToolList()
         {
             ArrayList<ListItem> tools = new ArrayList<>();
             tools.add(new ListItem("hammer", 5));
@@ -84,6 +88,7 @@ public class GameControl
             
             // Save the tools in the game
             theGame.setTools(tools);
+            System.out.println("Tool list set");
         }
         //create the list of provisions
         
@@ -255,7 +260,8 @@ public class GameControl
             loc.setSymbol("...");
             theMap.setLocation(3, 2, loc);
             
-            theGame.setMap(theMap);
+            theGame.setTheMap(theMap);
+            System.out.println("Map data set");
             /*Location[][] locations = theMap.getLocation();
             //System.out.println(locations[2][1]);
     
@@ -274,10 +280,10 @@ public class GameControl
         public static void displayMap() {
                     
             //Game tg = CityOfAaron.getTheGame();
-            Map theMap = theGame.getMap();
-            System.out.println(theGame.getPlayer());
-            CropData theCrops = theGame.getCropData();
-            System.out.println(theCrops.getAcresOwned());
+            Map theMap = theGame.getTheMap();
+            //System.out.println(theGame.getPlayer());
+            //CropData theCrops = theGame.getCropData();
+            //System.out.println(theCrops.getAcresOwned());
             Location[][] locations = theMap.getLocation();
             //System.out.println(locations[2][1]);
     
@@ -292,17 +298,19 @@ public class GameControl
         
         public void displayAnimals() {
             
-        System.out.print("List of Animals: ");
-                //for (int a : animals)
-                //System.out.println(a);
+        System.out.println("List of Animals: ");
+        ArrayList<ListItem> animals = theGame.getAnimals();
+                for (ListItem item : animals)
+                System.out.println(item.getName()+ " " + item.getNumber());
          
         }
         
         public void displayTools() {
             
-        System.out.print("List of Tools: ");
-                //for (int a : tools)
-                //System.out.println(a);
+        System.out.println("List of Tools: ");
+               ArrayList<ListItem> tools = theGame.getTools();
+                for (ListItem item : tools)
+                System.out.println(item.getName()+ " " + item.getNumber());
          
         }
         
