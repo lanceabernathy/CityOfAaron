@@ -115,8 +115,8 @@ public static void buyLandView()
     */
     public static void runCropsView()
     {
-        // call the buyLandView() method
-        //buyLandView();
+        // call the LandView() methods
+        buyLandView();
         sellLandView();
         
         // add calls to the other crop view methods
