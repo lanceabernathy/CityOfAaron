@@ -98,14 +98,103 @@ public static void buyLandView()
         }
     }while(paramsNotOkay);
     }    
+    
     /**
     * The feedPeopleViewmethod
-    * Purpose: interface with the user input for selling land
-    * Parameters: none
-    * Returns: none
     */
+    public static void feedPeopleView()
+    {
+    Game theGame = CityOfAaron.getTheGame();
+    CropData cropData = theGame.getCropData();
+      
+    // Get the user’s input and save it.
+    int bushelsToFeed;
+    boolean paramsNotOkay;
+    do
+    {
+        paramsNotOkay = false;
+        System.out.print("How many bushels of grain do you want to give to the people? ");
+        bushelsToFeed = keyboard.nextInt();
+        try
+        {    
+            // Call the feedPeople( ) method in the control layer
+            CropControl.feedPeople(bushelsToFeed, cropData);
+        }    
+        catch(CropException e)
+        {
+            System.out.println("I am sorry master, I cannot do this.");
+            System.out.println(e.getMessage());
+            paramsNotOkay = true;
+        }
+    }while(paramsNotOkay);
+    }   
     
+    /**
+    * The plantCropsViewmethod
+    */
+    public static void plantCropsView()
+    {
+    Game theGame = CityOfAaron.getTheGame();
+    CropData cropData = theGame.getCropData();
     
+    // not sure where this is set at so I intitialized at 100 here for now
+    int cityLandAvailable = 100;
+    
+    // Prompt the user to enter the number of acres to buy
+    System.out.format("City land available is %d acres.%n",cityLandAvailable);
+    
+    // Get the user’s input and save it.
+    int desiredAcres;
+    boolean paramsNotOkay;
+    do
+    {
+        paramsNotOkay = false;
+        System.out.print("How many acres of land do you want to plant? ");
+        desiredAcres = keyboard.nextInt();
+        try
+        {    
+            // Call the plantCrops( ) method in the control layer
+            CropControl.plantCrops(desiredAcres, cityLandAvailable, cropData);
+        }    
+        catch(CropException e)
+        {
+            System.out.println("I am sorry master, I cannot do this.");
+            System.out.println(e.getMessage());
+            paramsNotOkay = true;
+        }
+    }while(paramsNotOkay);
+    }   
+     
+    
+    /**
+    * The setOfferingViewmethod
+    */
+    public static void setOfferingView()
+    {
+    Game theGame = CityOfAaron.getTheGame();
+    CropData cropData = theGame.getCropData();
+      
+    // Get the user’s input and save it.
+    int percentOffering;
+    boolean paramsNotOkay;
+    do
+    {
+        paramsNotOkay = false;
+        System.out.print("What percentage for offerings will you offer? ");
+        percentOffering = keyboard.nextInt();
+        try
+        {    
+            // Call the setOffering( ) method in the control layer
+            CropControl.setOffering(percentOffering, cropData);
+        }    
+        catch(CropException e)
+        {
+            System.out.println("I am sorry master, I cannot do this.");
+            System.out.println(e.getMessage());
+            paramsNotOkay = true;
+        }
+    }while(paramsNotOkay);
+    } 
     
     /**
     * The runCropsViewmethod()
@@ -118,6 +207,9 @@ public static void buyLandView()
         // call the LandView() methods
         buyLandView();
         sellLandView();
+        feedPeopleView();
+        plantCropsView();
+        setOfferingView();
         
         // add calls to the other crop view methods
         // as they are written

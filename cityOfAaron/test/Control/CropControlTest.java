@@ -6,6 +6,7 @@
 package Control;
 
 import Model.CropData;
+import exceptions.CropException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -35,7 +36,7 @@ public class CropControlTest {
      * Test of sellLand method, of class CropControl.
      */
     @Test
-    public void testSellLand() {
+    public void testSellLand() throws CropException {
         System.out.println("sellLand");
         int landPrice = 15;
         int acresToSell = 10;
@@ -54,7 +55,7 @@ public class CropControlTest {
      * Test of buyLand method, of class CropControl.
      */
     @Test
-    public void testBuyLand() {
+    public void testBuyLand() throws CropException {
         System.out.println("buyLand");
         int landPrice = 15;
         int acresToBuy = 10;
@@ -74,7 +75,7 @@ public class CropControlTest {
      * Test of setOffering method, of class CropControl.
      */
     @Test
-    public void testSetOffering() {
+    public void testSetOffering() throws CropException {
         System.out.println("setOffering");
         int percentOffering = 10;
         CropData cropData = new CropData();

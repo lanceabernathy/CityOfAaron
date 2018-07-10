@@ -30,13 +30,15 @@ public class CropControl
     return landPrice;
     }
      
-           
-    // sellLand method
-    // Purpose: Sell land - subtracts from the acres owned
-    // Parameters: the price of land, the number of acres to sell, and
-    // a reference to a CropData object
-    // Pre-conditions: acresToSell >= 0 and acresToSell <= acresOwned
-    // Returns: the number of acres owned after the sale
+        
+    /**
+     *
+     * @param landPrice price of land
+     * @param acresToSell the number of acres to sell
+     * @param cropData CropData object
+     * @return the number of acres owned after the sale
+     * @throws CropException
+     */
     
 public static int sellLand(int landPrice, int acresToSell, CropData cropData) throws CropException
 {
@@ -72,8 +74,15 @@ public static int sellLand(int landPrice, int acresToSell, CropData cropData) th
     // (acresOwned + acresToBuy) / 10   
     // Returns: the number of acres owned after the pruchace
     // Returns: the amount of wheat owned after the pruchace.
+    /**
+     *
+     * @param landPrice
+     * @param acresToBuy
+     * @param cropData
+     * @throws CropException
+     */
 
-public static void buyLand(int landPrice, int acresToBuy, CropData cropData) throws CropException
+public static int buyLand(int landPrice, int acresToBuy, CropData cropData) throws CropException
 {
     
     //if acresToBuy < 0, return -1
@@ -105,7 +114,7 @@ public static void buyLand(int landPrice, int acresToBuy, CropData cropData) thr
     cropData.setWheatInStore(wheatInStore);
     
      //return acresOwned
-    //return acresOwned;
+    return acresOwned;
         
 }
 
@@ -118,15 +127,23 @@ public static void buyLand(int landPrice, int acresToBuy, CropData cropData) thr
     // Returns: the amount of wheat for paid for offerings
     //Author: Lance Aberanathy
 
-public static int setOffering(int percentOffering, CropData cropData)
+    /**
+     *
+     * @param percentOffering
+     * @param cropData
+     * @return
+     * @throws CropException
+     */
+
+public static int setOffering(int percentOffering, CropData cropData) throws CropException
 {
     //if percentOffering < 0, return -1
     if (percentOffering < 0)
-    return -1;
+       throw new CropException("A negative value was input");
     
     //if percentOffering > 100, return -1
      if (percentOffering > 100)
-     return -1;
+         throw new CropException("Please enter a valid percentage between 1 and 100");
      
      //Amount of wheat to pay in offerings. 
     int harvest = cropData.getHarvest();
@@ -144,8 +161,9 @@ public static int setOffering(int percentOffering, CropData cropData)
      * @param bushelsToFeed
      * @param cropData
      * @return bushelsToFeed
+     * @throws exceptions.CropException
      */
-    public static int feedPeople(int bushelsToFeed, CropData cropData) {
+    public static int feedPeople(int bushelsToFeed, CropData cropData)throws CropException {
         // 1. Ask the user “How many bushels of grain do you want to give to the people?”
 
         // 2. User enters a value.
@@ -153,13 +171,13 @@ public static int setOffering(int percentOffering, CropData cropData)
 
         // 3. Check to make sure that the value is positive. If it is not, show a message and ask the user to // enter the value again.
 	if (0 > bushelsToFeed) 
-            return -1;
+         throw new CropException("A negative value was input");
 
         // 4. Make sure that the city has this much wheat in storage. If not, show a message and ask the 
         // user to enter the value again.
         int wheatInStore = cropData.getWheatInStore();
 	if (wheatInStore < bushelsToFeed)
-            return -1;
+            throw new CropException("There is insufficient wheat to feed this amount of bushels");
 
         // 5. Subtract this amount from the wheat in storage. Display the amount of wheat you have left.
 	wheatInStore -= bushelsToFeed; 
@@ -175,21 +193,22 @@ public static int setOffering(int percentOffering, CropData cropData)
      * @param cityLandAvailable
      * @param cropData
      * @return
+     * @throws exceptions.CropException
      */
-    public static int plantCrops(int desiredAcres, int cityLandAvailable, CropData cropData) {
+    public static int plantCrops(int desiredAcres, int cityLandAvailable, CropData cropData)throws CropException {
     // 1. Ask the user “How many acres of land do you want to plant?
 
     // 2. User enters a value.
 
     // 3. Check to make sure that the value is positive. If it is not, show a message and ask the user to // enter the value again.
         if (desiredAcres < 0)
-            return -1;
+            throw new CropException("A negative value was input");
 
     // 4. Check to make sure the city has this much land. If not, show a message and ask the user to 
     // enter a new value.
         if (desiredAcres > cityLandAvailable)
     //message  “Not sufficient amount of land available, enter a valid land amount 
-            return -1;
+            throw new CropException("Not sufficient amount of land available, enter a valid land amount ");
             
 
     // 5. Make sure that the city has enough wheat in storage to plant this many acres (You can plant // 2 acres with one bushel of wheat). If not, show a message and ask the user to enter the value 
@@ -197,7 +216,7 @@ public static int setOffering(int percentOffering, CropData cropData)
         int wheatInStore = cropData.getWheatInStore();
         if (wheatInStore < (desiredAcres / 2)) 
     //message  “Not enough wheat in storage, enter a valid value”
-            return -1; 
+            throw new CropException("Not enough wheat in storage, enter a valid value");
 
 
     // 6. Calculate the number of bushels required to plant the crops.
