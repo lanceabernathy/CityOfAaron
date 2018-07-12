@@ -130,15 +130,29 @@ public class MainMenuView extends MenuView
     }
     
      /**
-    * The startNewGame method
-    * Purpose: loads game object and continues the game
+    * The startSavedGame method
+    * Purpose: loads a saved game object from disk and start the game
     * Parameters: none
     * Returns: none
     */
     // ===================================
     public void startSavedGame()
     {
-    System.out.println("Start saved game option selected.");
+        String filePath;
+        
+        // get rid of \n character left in the stream
+        keyboard.nextLine();
+        
+        // prompt user and get a file path
+        System.out.println("Enter the name of the saved game: ");
+        filePath = keyboard.next();
+        
+        // call the getSavedGame( ) method in the GameControlclass to load the game
+        GameControl.getSavedGame(filePath);
+        
+        // display the game menu for the loaded game
+        
+    
     }
     
     /**

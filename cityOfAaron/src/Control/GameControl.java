@@ -9,6 +9,10 @@ package Control;
 import java.util.ArrayList;
 import cityofaaron.CityOfAaron;
 import Model.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class GameControl implements Serializable
@@ -314,6 +318,51 @@ public class GameControl implements Serializable
          
         }
         
+        /**
+         * getSavedGame method
+         * Purpose: load a saved game from disk
+         * @param theGame
+         * @param filePath 
+         * Returns: none
+         * Side Effect: the game reference in the driver is updated
+         */
+        public static void saveGame(Game theGame, String filePath) 
+        {
+
+            try(FileOutputStream fips = new FileOutputStream(filePath))
+            {
+                ObjectOutputStream output = new ObjectOutputStream(fips);
+                output.writeObject(theGame);
+                CityOfAaron.setCurrentGame(theGame);
+            }
+            catch(Exception e)
+            {
+                System.out.println("There was an error saving the game file\n");
+            }
+        }
+        
+        /**
+         * getSavedGame method
+         * Purpose: load a saved game from disk
+         * @param filePath 
+         * Returns: none
+         * Side Effect: the game reference in the driver is updated
+         */
+        public static void getSavedGame(String filePath) 
+        {
+            theGame = null;
+            
+            try(FileInputStream fips = new FileInputStream(filePath))
+            {
+                ObjectInputStream input = new ObjectInputStream(fips);
+                theGame=(Game) input.readObject();
+                CityOfAaron.setCurrentGame(theGame);
+            }
+            catch(Exception e)
+            {
+                System.out.println("There was an error reading the saved game file\n");
+            }
+        }
 
  }
         
