@@ -151,6 +151,8 @@ public class MainMenuView extends MenuView
         GameControl.getSavedGame(filePath);
         
         // display the game menu for the loaded game
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenuView(); 
         
     
     }
@@ -177,6 +179,19 @@ public class MainMenuView extends MenuView
     // ===================================
     public void displaySaveGameView()
     {
-    System.out.println("display the save game view option selected.");
+        String filePath;
+        
+        // get rid of \n character left in the stream
+        keyboard.nextLine();
+        
+        // prompt user and get a file path
+        System.out.println("Enter a file name to save the game as: ");
+        filePath = keyboard.next();
+        Game theGame = null;
+        
+        // call the getSavedGame( ) method in the GameControlclass to load the game
+        GameControl.saveGame(theGame, filePath);
+        
+
     }
 }
