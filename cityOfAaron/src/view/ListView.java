@@ -6,7 +6,11 @@
 package view;
 
 import Control.GameControl;
-import Model.TeamMember;
+import Model.*;
+import cityofaaron.CityOfAaron;
+import java.io.PrintWriter;
+import java.io.Writer;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ListView {
@@ -57,11 +61,12 @@ public class ListView {
             "**********************************\n" +
             " 1 - View the development team\n" +
             " 2 - View a list of animals\n" +
-            " 3 - View a list of tools\n" +
-            " 4 - View a list of provisions\n" +
-            " 5 - Return to the game menu\n";
+            " 3 - Save a list of animals\n" + 
+            " 4 - View a list of tools\n" +
+            " 5 - View a list of provisions\n" +
+            " 6 - Return to the game menu\n";
 
-        max = 5;
+        max = 6;
     }
     
     /**
@@ -112,13 +117,16 @@ public class ListView {
             case 2: // if the option is 2, call viewAnimals( )
                 viewAnimals();
                 break;
-            case 3: // if the option is 3, call viewTools( )
+            case 3: // if the option is 2, call viewAnimals( )
+                printAnimalReport();    
+                break;
+            case 4: // if the option is 3, call viewTools( )
                 viewTools();
                 break;
-            case 4: // if the option is 4, call viewProvisions( )
+            case 5: // if the option is 4, call viewProvisions( )
                 viewProvisions();
                 break;
-            case 5: // if the option is 5, return to main menu
+            case 6: // if the option is 5, return to main menu
                 break;
         }        
     }
@@ -155,6 +163,13 @@ public class ListView {
         gc.displayProvisions();
 
     }
+
+    private void printAnimalReport() {
+        GameControl gc = new GameControl();
+        gc.printAnimalReport();
+    }
+    
+ 
     
 }
 
