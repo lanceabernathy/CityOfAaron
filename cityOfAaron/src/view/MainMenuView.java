@@ -8,10 +8,11 @@ package view;
 import Control.GameControl;
 import Model.*;
 import cityofaaron.CityOfAaron;
+import java.io.Serializable;
 import java.util.Scanner;
-import gameproject.GameProject;
+//import gameproject.GameProject;
 
-public class MainMenuView extends MenuView
+public class MainMenuView extends MenuView implements Serializable 
 {   
     Scanner keyboard = new Scanner(System.in);
     private String theMenu;
@@ -121,6 +122,7 @@ public class MainMenuView extends MenuView
     GameControl.createMap();
     GameControl.createAnimalList();
     GameControl.createToolList();
+    GameControl.createProvisionsList();
     
     
     // Display the Game menu
@@ -187,10 +189,10 @@ public class MainMenuView extends MenuView
         // prompt user and get a file path
         System.out.println("Enter a file name to save the game as: ");
         filePath = keyboard.next();
-        Game theGame = null;
+        Game theGame = CityOfAaron.getTheGame();
         
         // call the getSavedGame( ) method in the GameControlclass to load the game
-        GameControl.saveGame(theGame, filePath);
+        GameControl.saveGame(filePath);
         
 
     }

@@ -151,7 +151,8 @@ public class ListView {
     }
 
     private void viewProvisions() {
-    System.out.println("This option will display a list of provisions.");
+        GameControl gc = new GameControl();
+        gc.displayProvisions();
 
     }
     

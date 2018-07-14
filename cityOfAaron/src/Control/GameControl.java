@@ -30,7 +30,7 @@ public class GameControl implements Serializable
     {
         // Created the game object. Save it in the main driver file
         theGame = new Game();
-        CityOfAaron.setCurrentGame(theGame);
+        CityOfAaron.setTheGame(theGame);
         
         // create the player object. Save it in the game object
         Player thePlayer = new Player();
@@ -95,6 +95,18 @@ public class GameControl implements Serializable
             System.out.println("Tool list set");
         }
         //create the list of provisions
+        public static void createProvisionsList()
+        {
+            ArrayList<ListItem> provisions = new ArrayList<>();
+            provisions.add(new ListItem("Meat", 6));
+            provisions.add(new ListItem("Sugar", 13));
+            provisions.add(new ListItem("Beans", 21));
+            provisions.add(new ListItem("Corn", 19));
+            
+            // Save the tools in the game
+            theGame.setProvisions(provisions);
+            System.out.println("provisions list set");
+        }
         
         // create the Locations and the Map object
         /**
@@ -283,11 +295,8 @@ public class GameControl implements Serializable
         
         public static void displayMap() {
                     
-            //Game tg = CityOfAaron.getTheGame();
+
             Map theMap = theGame.getTheMap();
-            //System.out.println(theGame.getPlayer());
-            //CropData theCrops = theGame.getCropData();
-            //System.out.println(theCrops.getAcresOwned());
             Location[][] locations = theMap.getLocation();
             //System.out.println(locations[2][1]);
     
@@ -318,22 +327,32 @@ public class GameControl implements Serializable
          
         }
         
+        public void displayProvisions() {
+            
+        System.out.println("List of Provisions: ");
+               ArrayList<ListItem> provisions = theGame.getProvisions();
+                for (ListItem item : provisions)
+                System.out.println(item.getName()+ " " + item.getNumber());
+         
+        }
+        
         /**
-         * getSavedGame method
-         * Purpose: load a saved game from disk
+         * SavedGame method
+         * Purpose: save a game to disk
          * @param theGame
          * @param filePath 
          * Returns: none
          * Side Effect: the game reference in the driver is updated
          */
-        public static void saveGame(Game theGame, String filePath) 
+        public static void saveGame(String filePath) 
         {
-
+            Game Game = CityOfAaron.getTheGame();
             try(FileOutputStream fips = new FileOutputStream(filePath))
             {
+                Game = GameControl.theGame;
                 ObjectOutputStream output = new ObjectOutputStream(fips);
-                output.writeObject(theGame);
-                CityOfAaron.setCurrentGame(theGame);
+                output.writeObject(Game);
+               
             }
             catch(Exception e)
             {
@@ -356,7 +375,7 @@ public class GameControl implements Serializable
             {
                 ObjectInputStream input = new ObjectInputStream(fips);
                 theGame=(Game) input.readObject();
-                CityOfAaron.setCurrentGame(theGame);
+                CityOfAaron.setTheGame(theGame);
             }
             catch(Exception e)
             {

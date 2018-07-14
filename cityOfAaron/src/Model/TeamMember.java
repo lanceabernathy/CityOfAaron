@@ -6,12 +6,14 @@
 package Model;
 
 import java.awt.Point;
+import java.io.Serializable;
 
 /**
  *
  * @author Lance
  */
-public enum TeamMember {
+public enum TeamMember implements Serializable
+{
     
     Lance("Lance Abernathy", "Team member from California"),
     Andrew("Andrew Petersen", "Team member from Nevada");

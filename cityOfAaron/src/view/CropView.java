@@ -10,15 +10,16 @@ import Control.*;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import exceptions.CropException;
+import java.io.Serializable;
 
-public class CropView {
+public class CropView implements Serializable {
     
 // Create a Scanner object
 private static Scanner keyboard = new Scanner(System.in);
 
 // Get references to the Game object and the CropDataobject
-//private static Game theGame = CityOfAaron.getTheGame();
-//private static CropData cropData = theGame.getCropData();
+Game theGame = CityOfAaron.getTheGame();
+CropData theCrops = theGame.getCropData();
 
 /**
 * The buyLandViewmethod
@@ -28,8 +29,9 @@ private static Scanner keyboard = new Scanner(System.in);
 */
 public static void buyLandView()
 {
+    System.out.print("Buying Land");
     Game theGame = CityOfAaron.getTheGame();
-    CropData cropData = theGame.getCropData();
+    CropData theCrops = theGame.getCropData();
     // Get the cost of land for this round.
     int price = CropControl.calcLandPrice();
     
@@ -49,7 +51,7 @@ public static void buyLandView()
         {
     
             // Call the buyLand( ) method in the control layer to buy the land
-            CropControl.buyLand(toBuy, price, cropData);
+            CropControl.buyLand(toBuy, price, theCrops);
         }
         catch(CropException e)
         {

@@ -22,7 +22,12 @@ public class Game implements Serializable{
     private static Game theGame;
     private ArrayList<ListItem> animals;
     private ArrayList<ListItem> tools;
+    private ArrayList<ListItem> provisions;
 
+    public Game(){
+        
+    }
+    
     public Player getThePlayer() {
         return thePlayer;
     }
@@ -70,12 +75,24 @@ public class Game implements Serializable{
     public ArrayList<ListItem> getTools() {
         return tools;
     }
-    
-       
-     public static void setCurrentGame(Game game){
-        theGame = game;
+   
+    public void setProvisions(ArrayList<ListItem> provisions) {
+        this.provisions = provisions;
     }
-    public static Game getCurrentGame(){
-        return theGame;
-    }   
-}
+    
+    public ArrayList<ListItem> getProvisions() {
+        return provisions;
+        
+    }
+    
+    public ArrayList<ListItem> setProvisions() {
+        return provisions;
+    }
+       
+    public static void setTheGame(Game game){
+        
+    }
+    public static Game getTheGame(){
+       return theGame;
+    }
+  }
