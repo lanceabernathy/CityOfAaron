@@ -18,6 +18,7 @@ public class Game implements Serializable{
     private Player thePlayer;
     private CropData theCrops;
     private Map theMap;
+    private Location theLocation;
     //public boolean thePlayer;
     private static Game theGame;
     private ArrayList<ListItem> animals;
@@ -53,6 +54,7 @@ public class Game implements Serializable{
     public Map getTheMap() {
         return theMap;
     }
+    
 
 
     public void setAnimals(ArrayList<ListItem> animals) {

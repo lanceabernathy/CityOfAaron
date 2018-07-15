@@ -15,13 +15,6 @@ public class Map implements Serializable
     private int colCount;               // stores the number of columns
     private Location[][] locations;    // a reference to a 2-dimensional array
                                         // of Location objects
-    /**
-    * default Map constructor
-    * Purpose: Set data members to default values
-    * Parameters: none
-    * Returns: none
-    */
-    public Map() {};
 
     /**
     * parameterized Map constructor
@@ -29,6 +22,8 @@ public class Map implements Serializable
     * and creates an array of Location objects
     * Parameters: row count and column count
     * Returns: none
+     * @param _rows
+     * @param _cols
     */
     public Map(int _rows, int _cols)
     {
@@ -37,6 +32,14 @@ public class Map implements Serializable
         
         // create the array of location objects
         this.locations = new Location[_rows][_cols];
+    }
+    
+    public int getRowCount() {
+        return rowCount;
+    }
+
+    public int getColCount() {
+        return colCount;
     }
     
     /**
@@ -67,10 +70,7 @@ public class Map implements Serializable
         this.locations[row][col] = _location;
     } 
 
-    public Location[][] getLocation() {
-        return this.locations;
-        
-    }
+
 
    
 }

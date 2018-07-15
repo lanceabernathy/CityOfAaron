@@ -131,16 +131,17 @@ public class GameControl implements Serializable
                             "of life for our city. The river marks the eastern\n " +
                             "boundary of the city - it is wilderness to the East.\n";
             
-            // create a new Location object
+  
+                       
+            // set this location object in each cell of the array in column 4
+            for(int i = 0; i < MAX_ROW; i++)
+            {
+                // create a new Location object
             Location loc = new Location();
             
             // use setters in the Location class to set the description and symbol
             loc.setDescription(river);
             loc.setSymbol("~~~");
-                       
-            // set this location object in each cell of the array in column 4
-            for(int i = 0; i < MAX_ROW; i++)
-            {
                 theMap.setLocation(i, 4, loc);
             }
             
@@ -151,16 +152,17 @@ public class GameControl implements Serializable
                              "sand as far as the eye can see. No one that has.\n" +
                              "gone into the desert has ever returned.\n";
             
-            // create a new Location object
-            loc = new Location();
-            
-            // use setters in the Location class to set the description and symbol
-            loc.setDescription(desert);
-            loc.setSymbol("---");
+           
             
             // set this location object in each cell of the array in column 4
             for(int i = 0; i < MAX_ROW; i++)
             {
+                 // create a new Location object
+           Location loc = new Location();
+            
+            // use setters in the Location class to set the description and symbol
+            loc.setDescription(desert);
+            loc.setSymbol("---");
                 theMap.setLocation(i, 0, loc);
             }
             
@@ -170,16 +172,17 @@ public class GameControl implements Serializable
                              "To the north lie the lands of the Lamanites,\n " +
                              "Only death awaits you there.\n";
             
-            // create a new Location object
-            loc = new Location();
+            
+            // set this location object in each cell of the array in column 4
+            for(int i = 1; i < MAX_COL -1; i++)
+            {
+                // create a new Location object
+            Location loc = new Location();
             
             // use setters in the Location class to set the description and symbol
             loc.setDescription(border);
             loc.setSymbol("xxx");
             
-            // set this location object in each cell of the array in column 4
-            for(int i = 1; i < MAX_COL -1; i++)
-            {
                 theMap.setLocation(0, i, loc);
             }
             
@@ -189,16 +192,17 @@ public class GameControl implements Serializable
                                  "To the south lie the wilderness, it is populated\n " +
                                  "wild animals and dangerous beast. Do not enter. \n";
             
-            // create a new Location object
-            loc = new Location();
-            
-            // use setters in the Location class to set the description and symbol
-            loc.setDescription(wilderness);
-            loc.setSymbol("^^^");
+           
             
             // set this location object in each cell of the array in column 4
             for(int i = 1; i < MAX_COL -1; i++)
             {
+                 // create a new Location object
+            Location loc = new Location();
+            
+            // use setters in the Location class to set the description and symbol
+            loc.setDescription(wilderness);
+            loc.setSymbol("^^^");
                 theMap.setLocation(4, i, loc);
             }
             
@@ -207,13 +211,14 @@ public class GameControl implements Serializable
             "In the spring, this low farmland floods and is covered with rich\n" +
             "new soil. Wheat is planted as far as you can see. \n";
             
-            // set the farmland locations with a hint
-            loc = new Location();
-            loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
-            loc.setSymbol("!!!");
+            
             
             for(int i = 1; i < MAX_ROW -1; i++)
             {
+                // set the farmland locations with a hint
+             Location loc = new Location();
+            loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
+            loc.setSymbol("!!!");
                 theMap.setLocation(i, 3, loc);
             }
             
@@ -223,7 +228,7 @@ public class GameControl implements Serializable
             "land. Take care of the people and they will take care of you.\n";
             
             // set a court location with a hint
-            loc = new Location();
+            Location loc = new Location();
             loc.setDescription(Court);
             loc.setSymbol("***");
             theMap.setLocation(1, 1, loc);
@@ -300,15 +305,13 @@ public class GameControl implements Serializable
                     
 
             Map theMap = theGame.getTheMap();
-            Location[][] locations = theMap.getLocation();
             //System.out.println(locations[2][1]);
-    
-                for (int i = 0; i < locations.length; i++) 
+                for (int i = 0; i < MAX_ROW; i++) 
                 {
-                    for (int j = 0; j < locations[i].length; j++) 
-                    {
-                        System.out.println(locations[i][j]);
+                    for(int j = 0; j < MAX_COL; j++){
+                        System.out.print(theMap.getLocation(i, j). getSymbol() + " ");
                     }
+                    System.out.print(" \n");
                 }
             }
         
