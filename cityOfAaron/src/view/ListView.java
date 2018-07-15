@@ -63,10 +63,12 @@ public class ListView {
             " 2 - View a list of animals\n" +
             " 3 - Save a list of animals\n" + 
             " 4 - View a list of tools\n" +
-            " 5 - View a list of provisions\n" +
-            " 6 - Return to the game menu\n";
+            " 5 - Save a list of tools\n" + 
+            " 6 - View a list of provisions\n" +
+            " 7 - Save a list of provisions\n" + 
+            " 8 - Return to the game menu\n";
 
-        max = 6;
+        max = 8;
     }
     
     /**
@@ -123,10 +125,16 @@ public class ListView {
             case 4: // if the option is 3, call viewTools( )
                 viewTools();
                 break;
-            case 5: // if the option is 4, call viewProvisions( )
+            case 5:
+                printToolsReport();
+                break;
+            case 6: // if the option is 4, call viewProvisions( )
                 viewProvisions();
                 break;
-            case 6: // if the option is 5, return to main menu
+            case 7:
+                printProvisionsReport();
+                break;
+            case 8: // if the option is 8, return to main menu
                 break;
         }        
     }
@@ -167,6 +175,16 @@ public class ListView {
     private void printAnimalReport() {
         GameControl gc = new GameControl();
         gc.printAnimalReport();
+    }
+    
+    private void printToolsReport() {
+        GameControl gc = new GameControl();
+        gc.printToolsReport();
+    }
+    
+    private void printProvisionsReport() {
+        GameControl gc = new GameControl();
+        gc.printProvisionsReport();
     }
     
  
