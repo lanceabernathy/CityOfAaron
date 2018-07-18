@@ -21,8 +21,9 @@ public class CityOfAaron {
          return theGame;
      }  
      
-     public static Game setTheGame(Game theGame) {
-         return theGame;
+     public static void setTheGame(Game _theGame) {
+         //return theGame;
+         theGame = _theGame;
      }
           
     // main function - entry point for the program

@@ -38,8 +38,8 @@ public class Game implements Serializable{
     }
 
 
-    public void setCropData(CropData cropData) {
-        this.theCrops = cropData;
+    public void setCropData(CropData theCrops) {
+        this.theCrops = theCrops;
     }
 
     public CropData getCropData() {
@@ -96,5 +96,12 @@ public class Game implements Serializable{
     }
     public static Game getTheGame(){
        return theGame;
+    }
+    
+    public static void setCurrentGame(Game game){
+        theGame = game;
+    }
+    public static Game getCurrentGame(){
+        return theGame;
     }
   }

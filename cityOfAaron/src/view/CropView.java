@@ -18,8 +18,8 @@ public class CropView implements Serializable {
 private static Scanner keyboard = new Scanner(System.in);
 
 // Get references to the Game object and the CropDataobject
-Game theGame = CityOfAaron.getTheGame();
-CropData theCrops = theGame.getCropData();
+//Game Game = CityOfAaron.getTheGame();
+//CropData theCrops = Game.getCropData();
 
 /**
 * The buyLandViewmethod
