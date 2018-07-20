@@ -123,6 +123,7 @@ public class MainMenuView extends MenuView implements Serializable
     GameControl.createAnimalList();
     GameControl.createToolList();
     GameControl.createProvisionsList();
+    GameControl.displayBeginningCropReport();
     
     
     // Display the Game menu

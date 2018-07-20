@@ -129,6 +129,7 @@ public class GameMenuView {
     //System.out.println("This option will display the map.");    
     GameControl.displayMap();
     }
+    
     /**
     *The viewList() method
     * Purpose: Creates a ViewList object and calls its

@@ -51,7 +51,7 @@ public class GameControl implements Serializable
             
             CropData theCrops = new CropData();
             
-            theCrops.setYear(0);
+            theCrops.setYear(1);
             theCrops.setPopulation(100);
             theCrops.setNewPeople(5);
             theCrops.setCropYield(3);
@@ -66,9 +66,27 @@ public class GameControl implements Serializable
             
             // Save the cropData in the Game object
             theGame.setCropData(theCrops);
-            System.out.println("Crop Data Set");
-                        
+            System.out.println("Crop Data Set");             
         }
+    
+        public static void displayBeginningCropReport() {
+
+            CropData theCrops = theGame.getCropData();
+
+            System.out.println("\nGame Report: \n The year number: " + theCrops.getYear() +
+                    "\n How many people starved: " + theCrops.getNumStarved() + 
+                    "\n How many people came to the city: " + theCrops.getNewPeople() + 
+                    "\n The current population: " + theCrops.getPopulation() + 
+                    "\n The number of acres of crop land owned by the city: " + theCrops.getAcresOwned() +
+                    "\n The number of bushels per acre in this years harvest: " + theCrops.getCropYield() + 
+                    "\n The total number of bushels of wheat harvested: " + theCrops.getHarvest() +
+                    "\n The number of bushels paid in tithes and offerings: " + theCrops.getOfferingBushels() +
+                    "\n The number of bushels of wheat eaten by rats: " + theCrops.getEatenByRats() +
+                    "\n The number of bushels of wheat in store: " + theCrops.getWheatInStore());
+            }
+        
+    
+    
         // create the list of animals
         public static void createAnimalList()
         {

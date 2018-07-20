@@ -24,6 +24,7 @@ public class Game implements Serializable{
     private ArrayList<ListItem> animals;
     private ArrayList<ListItem> tools;
     private ArrayList<ListItem> provisions;
+    
 
     public Game(){
         
@@ -104,4 +105,5 @@ public class Game implements Serializable{
     public static Game getCurrentGame(){
         return theGame;
     }
+
   }

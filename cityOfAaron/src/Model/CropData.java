@@ -74,7 +74,7 @@ public class CropData implements Serializable{
 
     // newPeople getters and setters
     public int getNewPeople() {
-        return population;
+        return newPeople;
     }
     public void setNewPeople(int newPeople) {
         this.newPeople = newPeople;

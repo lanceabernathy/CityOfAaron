@@ -8,7 +8,9 @@ package Control;
 
 import Model.CropData;
 import Model.Game;
+import Model.ListItem;
 import exceptions.CropException;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class CropControl 
@@ -229,5 +231,21 @@ public static int setOffering(int percentOffering, CropData cropData) throws Cro
     // 8. Update game state to save how many acres have been planted.	
         return desiredAcres;
 
+    }
+
+    public static void buyLand(int toBuy, int price, ArrayList<ListItem> theCrops) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void feedPeople(int bushelsToFeed, ArrayList<ListItem> cropData) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void plantCrops(int desiredAcres, int cityLandAvailable, ArrayList<ListItem> cropData) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void setOffering(int percentOffering, ArrayList<ListItem> cropData) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
