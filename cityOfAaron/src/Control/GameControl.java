@@ -543,6 +543,40 @@ public class GameControl implements Serializable
             }
         }
     }
+    
+    public void displaylocation()
+    {
+        System.out.println("Enter the coordinates of the location you want to move to");
+        
+            int x;
+            int y;
+        
+            Map theMap = theGame.getTheMap();
+   
+            Scanner scan = new Scanner(System.in);
+            while (true)
+            {
+            System.out.println("Enter the x-coordinate:");
+            x = scan.nextInt();
+            if ((x > MAX_ROW) || (x < 0))
+                System.out.println("That area is not within your lands\n");
+            else
+                break;
+            }
+            
+            while (true)
+            {
+            System.out.println("Enter the y-coordinate:");
+            y = scan.nextInt();
+            if ((y > MAX_COL) || (y < 0))
+                System.out.println("That area is not within your lands\n");
+            else
+                break;
+            }
+            
+            System.out.print(theMap.getLocation(x, y). getDescription());
+            
+    }        
 
  }
         

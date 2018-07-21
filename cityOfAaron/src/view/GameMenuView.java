@@ -144,7 +144,9 @@ public class GameMenuView {
     } 
     
     private void startMoveNewLocation() {
-    System.out.println("This option will let you move to a new location.");    
+    GameControl gc = new GameControl();
+    gc.displaylocation();
+    //System.out.println("This option will let you move to a new location.");    
     }
 
     private void startManageCrops() {
